@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EZ Print - Currículos e Serviços Profissionais</title>
+    <style>
+        /* =========================================
+           ESTILOS BASE E ADAPTAÇÃO PARA CELULARES
+           ========================================= */
+        body { 
+            font-family: 'Segoe UI', Geneva, Verdana, sans-serif; 
+            background-color: #f4f7f6; 
+            margin: 0; 
+            padding: 15px; 
+            color: #333; 
+            box-sizing: border-box;
+        }
+
+        .landing-container { 
+            width: 100%;
+            max-width: 500px; 
+            margin: 20px auto; 
+            background: #fff; 
+            padding: 25px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
+            text-align: center; 
+            box-sizing: border-box;
+            margin-bottom: 40px;
+        }
+
+        .logo-ez { font-size: 30px; font-weight: bold; color: #2c3e50; }
+        .logo-sub { color: #27ae60; font-weight: bold; font-size: 13px; letter-spacing: 2px; margin-bottom: 25px; }
+        h2 { font-size: 20px; color: #2c3e50; margin-bottom: 20px; padding: 0 10px; }
+        
+        /* Cartões de Serviço */
+        .service-card { 
+            background: #f8f9fa; 
+            border-left: 4px solid #27ae60; 
+            padding: 20px; 
+            margin-bottom: 15px; 
+            text-align: left; 
+            border-radius: 0 8px 8px 0; 
+        }
+        .service-card h3 { margin: 0 0 8px 0; color: #2c3e50; font-size: 18px; }
+        .service-card p { margin: 0; color: #555; font-size: 14px; line-height: 1.5; }
+        .price { font-size: 22px; font-weight: bold; color: #27ae60; margin-top: 12px; display: block; }
+        
+        /* Grupo de Preços (Opção 3) */
+        .price-group {
+            margin-top: 12px;
+            font-size: 15px;
+            color: #444;
+            line-height: 1.7;
+        }
+        .price-group strong { color: #27ae60; font-size: 18px; }
+
+        /* Bloco de Destaque / Nota de Benefício */
+        .benefit-box {
+            background-color: #e8f8f5;
+            border: 1px dashed #27ae60;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0 15px 0;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #1e8449;
+            text-align: left;
+        }
+        .benefit-box p { margin: 0 0 12px 0; font-style: italic; }
+        .benefit-list { margin: 0; padding-left: 18px; }
+        .benefit-list li { margin-bottom: 10px; color: #235a3b; }
+        .benefit-list li strong { color: #1e8449; }
+
+        /* NOVO: Bloco de Segurança de Dados / LGPD */
+        .security-box {
+            background-color: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            font-size: 13px;
+            line-height: 1.5;
+            color: #334155;
+            text-align: left;
+        }
+        .security-box strong { color: #1e293b; display: block; margin-bottom: 5px; }
+
+        /* Botão do Final da Página */
+        .btn-whatsapp {
+            background-color: #25D366; 
+            color: white; 
+            padding: 14px 25px; 
+            font-size: 16px; 
+            text-decoration: none;
+            display: inline-flex; 
+            align-items: center; 
+            gap: 10px; 
+            border-radius: 50px; 
+            margin-top: 10px;
+            font-weight: bold; 
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2); 
+            transition: 0.2s;
+        }
+        .btn-whatsapp:hover { background-color: #128C7E; }
+
+        /* Botão Flutuante no Topo */
+        .btn-floating-whatsapp {
+            position: fixed;
+            top: 20px; 
+            right: 20px;
+            background-color: #25D366;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+            z-index: 9999; 
+            transition: transform 0.2s, background-color 0.2s;
+            text-decoration: none;
+        }
+        .btn-floating-whatsapp:hover {
+            background-color: #128C7E;
+            transform: scale(1.05);
+        }
+        .btn-floating-whatsapp svg { width: 32px; height: 32px; fill: #fff; }
+
+        /* Regras de Responsividade */
+        @media (max-width: 480px) {
+            body { padding: 8px; }
+            .landing-container { padding: 18px; margin: 10px auto; margin-top: 15px; }
+            .logo-ez { font-size: 26px; }
+            .logo-sub { font-size: 11px; margin-bottom: 20px; }
+            h2 { font-size: 18px; margin-bottom: 15px; }
+            .service-card { padding: 15px; }
+            .service-card h3 { font-size: 16px; }
+            .service-card p { font-size: 13px; }
+            .price { font-size: 19px; }
+            .price-group { font-size: 13px; }
+            .price-group strong { font-size: 16px; }
+            .benefit-box { padding: 15px; font-size: 13px; }
+            .security-box { padding: 12px; font-size: 12px; }
+            .btn-whatsapp { width: 100%; justify-content: center; box-sizing: border-box; }
+            .btn-floating-whatsapp { width: 55px; height: 55px; top: 15px; right: 15px; }
+            .btn-floating-whatsapp svg { width: 28px; height: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/5500999999999?text=Olá!%20Li%20o%20QR%20Code%20da%20EZ%20Print%20e%20gostaria%20de%20solicitar%20um%20serviço." class="btn-floating-whatsapp" target="_blank" title="Chamar no WhatsApp">
+        <svg viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.66.986 3.292 1.503 4.91 1.505 5.548 0 10.065-4.512 10.068-10.058a9.965 9.965 0 0 0-2.943-7.132A9.97 9.97 0 0 0 11.999 1.51c-5.553 0-10.07 4.511-10.073 10.06-.001 1.861.504 3.678 1.469 5.271L1.458 22.16l5.189-1.362zm11.218-4.523c-.301-.15-1.78-.878-2.056-.978-.275-.1-.475-.15-.675.15-.2.3-.775.978-.95 1.178-.175.2-.35.225-.65.075-1.03-.519-1.783-.984-2.486-2.19-.18-.309.18-.287.516-.957.056-.112.028-.21-.014-.3-.042-.09-.375-.9-.514-1.236-.135-.327-.27-.282-.37-.287l-.316-.006c-.11 0-.288.041-.439.205-.152.164-.58.567-.58 1.384s.599 1.62.683 1.733c.083.113 1.176 1.796 2.851 2.52 1.386.599 1.854.48 2.528.38.477-.07 1.781-.728 2.032-1.431.252-.704.252-1.307.176-1.432-.076-.124-.276-.2-.576-.35z"/>
+        </svg>
+    </a>
+
+    <div class="landing-container">
+        <div class="logo-ez">EZ PRINT</div>
+        <div class="logo-sub">IMPRESSÕES PROFISSIONAIS</div>
+        
+        <h2>Escolha a melhor opção para você</h2>
+        <p style="color: #666; font-size: 14px; margin-bottom: 20px;">Criamos o seu documento e cuidamos dos seus arquivos com total praticidade.</p>
+
+        <div class="service-card">
+            <h3>1. Versão Digital + 5 Cópias Impressas</h3>
+            <p>Montamos seu currículo destacando suas qualidades com um design limpo, moderno e com revisão gramatical inclusa. Você recebe o arquivo digital pronto no WhatsApp e ainda leva 5 cópias impressas em alta qualidade.</p>
+            <span class="price">R$ 20,00</span>
+        </div>
+
+        <div class="service-card">
+            <h3>2. Somente Versão Digital</h3>
+            <p>Montamos seu currículo do zero, destacando suas qualidades de acordo com o que o mercado pede atualmente e com revisão de português inclusa. Enviamos o arquivo digital pronto direto no seu WhatsApp.</p>
+            <span class="price">R$ 15,00</span>
+        </div>
+
+        <div class="service-card">
+            <h3>3. Impressões & Digitalização</h3>
+            <p>Precisa do currículo em mãos ou quer salvar seus documentos no celular? Também trabalhamos com impressões de alta qualidade e digitalização de documentos e arquivos em geral.</p>
+            <div class="price-group">
+                🖨️ Preto e Branco: <strong>R$ 2,00</strong> <small>(por página)</small><br>
+                🎨 Colorida: <strong>R$ 4,00</strong> <small>(por página)</small>
+            </div>
+        </div>
+
+        <div class="benefit-box">
+            <p>💡 <strong>Você sabia?</strong> Um currículo bem estruturado, moderno e bem escrito já te deixa na frente de muita gente durante a corrida pelo emprego novo!</p>
+            
+            <ul class="benefit-list">
+                <li><strong>Chama atenção em segundos:</strong> Quem está contratando olha dezenas de papéis por dia. Um visual limpo faz o seu nome se destacar logo de cara.</li>
+                <li><strong>Passa nos sistemas das empresas:</strong> Hoje em dia, muitos locais usam computadores para ler os currículos antes dos humanos. Nosso formato é feito para não ser descartado por esses sistemas.</li>
+                <li><strong>Garante total confiança:</strong> Um texto sem erros de português e com as palavras certas mostra que você é um profissional dedicado e caprichoso.</li>
+            </ul>
+        </div>
+
+        <div class="security-box">
+            <strong>🔒 Compromisso com sua Segurança (LGPD):</strong>
+            Em respeito à Lei Geral de Proteção de Dados, nós <strong>NÃO solicitamos</strong> documentos pessoais como CPF ou RG. O mercado de recrutamento atual condena o uso dessas informações em currículos por segurança, evitando fraudes e protegendo a sua privacidade. Seus dados estão protegidos conosco!
+        </div>
+
+        <p style="font-weight: bold; margin-top: 15px; font-size: 14px;">Fale conosco agora pelo WhatsApp para começarmos!</p>
+        
+        <a href="https://wa.me/5500999999999?text=Olá!%20Li%20o%20QR%20Code%20da%20EZ%20Print%20e%20gostaria%20de%20solicitar%20um%20serviço." class="btn-whatsapp" target="_blank">
+            Chamar no WhatsApp
+        </a>
+    </div>
+
+</body>
+</html>
