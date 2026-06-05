@@ -32,7 +32,9 @@
 
         .logo-ez { font-size: 30px; font-weight: bold; color: #2c3e50; }
         .logo-sub { color: #27ae60; font-weight: bold; font-size: 13px; letter-spacing: 2px; margin-bottom: 25px; }
-        h2 { font-size: 20px; color: #2c3e50; margin-bottom: 20px; padding: 0 10px; }
+        
+        h2 { font-size: 20px; color: #2c3e50; margin-bottom: 5px; padding: 0 10px; }
+        .section-desc { color: #666; font-size: 14px; margin-bottom: 20px; }
         
         /* Cartões de Serviço */
         .service-card { 
@@ -43,18 +45,50 @@
             text-align: left; 
             border-radius: 0 8px 8px 0; 
         }
+        
+        .card-print {
+            border-left: 4px solid #3498db;
+            background: #f0f8ff;
+        }
+
         .service-card h3 { margin: 0 0 8px 0; color: #2c3e50; font-size: 18px; }
         .service-card p { margin: 0; color: #555; font-size: 14px; line-height: 1.5; }
-        .price { font-size: 22px; font-weight: bold; color: #27ae60; margin-top: 12px; display: block; }
+        .price { font-size: 22px; font-weight: bold; color: #27ae60; margin-top: 12px; margin-bottom: 12px; display: block; }
         
-        /* Grupo de Preços (Opção 3) */
         .price-group {
             margin-top: 12px;
+            margin-bottom: 15px;
             font-size: 15px;
             color: #444;
             line-height: 1.7;
         }
-        .price-group strong { color: #27ae60; font-size: 18px; }
+        .price-group strong { color: #3498db; font-size: 18px; }
+
+        /* Botão pequeno dentro do cartão */
+        .btn-card {
+            background-color: #25D366;
+            color: white;
+            padding: 8px 16px;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.2s;
+            box-shadow: 0 2px 5px rgba(37, 211, 102, 0.2);
+        }
+        .btn-card:hover { background-color: #128C7E; }
+
+        /* Estilos da Transição (A Ponte) */
+        .transition-title {
+            font-size: 17px;
+            color: #2c3e50;
+            margin: 35px 0 15px 0;
+            font-weight: bold;
+            text-align: left;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
 
         /* Bloco de Destaque / Nota de Benefício */
         .benefit-box {
@@ -62,18 +96,18 @@
             border: 1px dashed #27ae60;
             padding: 20px;
             border-radius: 8px;
-            margin: 25px 0 15px 0;
+            margin: 0 0 15px 0;
             font-size: 14px;
             line-height: 1.5;
             color: #1e8449;
             text-align: left;
         }
-        .benefit-box p { margin: 0 0 12px 0; font-style: italic; }
-        .benefit-list { margin: 0; padding-left: 18px; }
-        .benefit-list li { margin-bottom: 10px; color: #235a3b; }
+        .benefit-box p { margin: 0 0 15px 0; font-style: italic; color: #1e8449;}
+        .benefit-list { margin: 0; padding-left: 0; list-style-type: none; }
+        .benefit-list li { margin-bottom: 12px; color: #235a3b; }
         .benefit-list li strong { color: #1e8449; }
 
-        /* AJUSTADO: Bloco de Segurança de Dados mais suave e informativo */
+        /* Bloco de Segurança de Dados */
         .security-box {
             background-color: #f1f5f9;
             border: 1px solid #cbd5e1;
@@ -98,7 +132,7 @@
             align-items: center; 
             gap: 10px; 
             border-radius: 50px; 
-            margin-top: 10px;
+            margin-top: 5px;
             font-weight: bold; 
             box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2); 
             transition: 0.2s;
@@ -135,13 +169,15 @@
             .landing-container { padding: 18px; margin: 10px auto; margin-top: 15px; }
             .logo-ez { font-size: 26px; }
             .logo-sub { font-size: 11px; margin-bottom: 20px; }
-            h2 { font-size: 18px; margin-bottom: 15px; }
+            h2 { font-size: 18px; margin-bottom: 5px; }
+            .section-desc { font-size: 13px; }
             .service-card { padding: 15px; }
             .service-card h3 { font-size: 16px; }
             .service-card p { font-size: 13px; }
             .price { font-size: 19px; }
             .price-group { font-size: 13px; }
             .price-group strong { font-size: 16px; }
+            .transition-title { font-size: 15px; margin: 25px 0 15px 0; }
             .benefit-box { padding: 15px; font-size: 13px; }
             .security-box { padding: 12px; font-size: 12px; }
             .btn-whatsapp { width: 100%; justify-content: center; box-sizing: border-box; }
@@ -152,7 +188,8 @@
 </head>
 <body>
 
-    <a href="https://wa.me/5547996442467?text=Olá!%20Li%20o%20QR%20Code%20da%20EZ%20Print%20e%20gostaria%20de%20solicitar%20um%20serviço." class="btn-floating-whatsapp" target="_blank" title="Chamar no WhatsApp">
+    <!-- Botão Flutuante (Dúvida Geral) -->
+    <a href="https://wa.me/5547996442467?text=Olá,%20EZ%20Print!%20Li%20o%20seu%20QR%20Code%20e%20gostaria%20de%20tirar%20uma%20dúvida." class="btn-floating-whatsapp" target="_blank" title="Chamar no WhatsApp">
         <svg viewBox="0 0 24 24">
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.66.986 3.292 1.503 4.91 1.505 5.548 0 10.065-4.512 10.068-10.058a9.965 9.965 0 0 0-2.943-7.132A9.97 9.97 0 0 0 11.999 1.51c-5.553 0-10.07 4.511-10.073 10.06-.001 1.861.504 3.678 1.469 5.271L1.458 22.16l5.189-1.362zm11.218-4.523c-.301-.15-1.78-.878-2.056-.978-.275-.1-.475-.15-.675.15-.2.3-.775.978-.95 1.178-.175.2-.35.225-.65.075-1.03-.519-1.783-.984-2.486-2.19-.18-.309.18-.287.516-.957.056-.112.028-.21-.014-.3-.042-.09-.375-.9-.514-1.236-.135-.327-.27-.282-.37-.287l-.316-.006c-.11 0-.288.041-.439.205-.152.164-.58.567-.58 1.384s.599 1.62.683 1.733c.083.113 1.176 1.796 2.851 2.52 1.386.599 1.854.48 2.528.38.477-.07 1.781-.728 2.032-1.431.252-.704.252-1.307.176-1.432-.076-.124-.276-.2-.576-.35z"/>
         </svg>
@@ -162,49 +199,59 @@
         <div class="logo-ez">EZ PRINT</div>
         <div class="logo-sub">IMPRESSÕES PROFISSIONAIS</div>
         
-        <h2>Escolha a melhor opção para você</h2>
-        <p style="color: #666; font-size: 14px; margin-bottom: 20px;">Criamos o seu documento e cuidamos dos seus arquivos com total praticidade.</p>
+        <!-- CARDÁPIO PRINCIPAL -->
+        <h2>Nossos Serviços</h2>
+        <p class="section-desc">Escolha a opção ideal para a sua necessidade hoje.</p>
 
+        <!-- OPÇÃO 1 -->
         <div class="service-card">
-            <h3>1. Currículo Versão Digital + 5 Cópias Impressas</h3>
-            <p>Montamos seu currículo destacando suas qualidades com um design limpo, moderno e com revisão gramatical inclusa. Você recebe o arquivo digital pronto no WhatsApp e ainda leva 5 cópias impressas em alta qualidade.</p>
+            <h3>1. Currículo Completo (Digital + 5 Cópias)</h3>
+            <p>A escolha certa para você passar credibilidade na <strong>entrega em mãos</strong>, com 5 cópias impressas em alta qualidade. Nós organizamos suas informações em um <strong>layout profissional e limpo</strong>, no formato que as empresas preferem ler. Fazemos uma <strong>revisão cuidadosa do português</strong> e também enviamos o arquivo em PDF, prontinho para você usar no WhatsApp e sites de emprego.</p>
             <span class="price">R$ 20,00</span>
+            <a href="https://wa.me/5547996442467?text=Olá,%20EZ%20Print!%20Gostei%20da%20*Opção%201%20(Currículo%20Completo)*.%20Como%20fazemos%20para%20começar?" class="btn-card" target="_blank">📲 Quero a Opção 1</a>
         </div>
 
+        <!-- OPÇÃO 2 -->
         <div class="service-card">
-            <h3>2. Currículo Somente Versão Digital</h3>
-            <p>Montamos seu currículo do zero, destacando suas qualidades de acordo com o que o mercado pede atualmente e com revisão de português inclusa. Enviamos o arquivo digital pronto direto no seu WhatsApp.</p>
+            <h3>2. Currículo Digital (Apenas WhatsApp)</h3>
+            <p>A opção perfeita para quem busca vagas pela internet. Organizamos suas informações em um <strong>layout profissional e limpo</strong>, ideal para envio online. Fazemos uma <strong>revisão atenta de todo o português</strong> e te entregamos o arquivo em PDF, pronto para você disparar com facilidade pelo <strong>WhatsApp, e-mails e plataformas de vagas</strong>.</p>
             <span class="price">R$ 15,00</span>
+            <a href="https://wa.me/5547996442467?text=Olá,%20EZ%20Print!%20Gostei%20da%20*Opção%202%20(Currículo%20Digital)*.%20Como%20funciona?" class="btn-card" target="_blank">📲 Quero a Opção 2</a>
         </div>
 
-        <div class="service-card">
-            <h3>3. Impressões & Digitalização</h3>
-            <p>Também trabalhamos com impressões de alta qualidade e digitalização de documentos e arquivos em geral.</p>
+        <!-- OPÇÃO 3 -->
+        <div class="service-card card-print">
+            <h3>3. Impressões Avulsas & Digitalização</h3>
+            <p>Cuidamos dos seus documentos do dia a dia. Imprima ou escaneie arquivos direto do seu celular.</p>
             <div class="price-group">
-                🖨️ Preto e Branco: <strong>R$ 2,00</strong> <small>(por página)</small><br>
-                🎨 Colorida: <strong>R$ 4,00</strong> <small>(por página)</small>
+                🖨️ Preto e Branco: <strong>R$ 2,00</strong> <small>(pág)</small> &nbsp;|&nbsp; 🎨 Colorida: <strong>R$ 4,00</strong> <small>(pág)</small>
             </div>
+            <a href="https://wa.me/5547996442467?text=Olá,%20EZ%20Print!%20Preciso%20da%20*Opção%203%20(Impressões/Cópias)*.%20Como%20te%20envio%20os%20arquivos?" class="btn-card" style="background-color: #3498db;" target="_blank">🖨️ Preciso de Impressão</a>
         </div>
 
+        <!-- A PONTE LÓGICA -->
+        <div class="transition-title">🎯 Vai fazer seu currículo com a gente?</div>
+
+        <!-- DIFERENCIAIS MAIS HUMANOS E REAIS -->
         <div class="benefit-box">
-            <p>💡 <strong>Você sabia?</strong> Um currículo bem estruturado, moderno e bem escrito já te deixa na frente de muita gente durante a corrida pelo emprego novo!</p>
-            
+            <p>💡 <strong>Por que o nosso modelo funciona tão bem?</strong></p>
             <ul class="benefit-list">
-                <li><strong>Chama atenção em segundos:</strong> Quem está contratando olha dezenas de papéis por dia. Um visual limpo faz o seu nome se destacar logo de cara.</li>
-                <li><strong>Passa nos sistemas das empresas:</strong> Hoje em dia, muitos locais usam computadores para ler os currículos antes dos humanos. Nosso formato é feito para não ser descartado por esses sistemas.</li>
-                <li><strong>Garante total confiança:</strong> Um texto sem erros de português e com as palavras certas mostra que você é um profissional dedicado e caprichoso.</li>
+                <li>✅ <strong>Padrão RH:</strong> Um formato limpo, direto ao ponto e que não trava nos sistemas de seleção das empresas.</li>
+                <li>✅ <strong>Revisão de Português:</strong> Entregue seu currículo sem medo. Nós lemos e corrigimos os textos para você passar total profissionalismo.</li>
+                <li>✅ <strong>Visual Organizado:</strong> Sem poluição e sem confusão. Ajudamos a destacar o que você tem de melhor logo na primeira olhada.</li>
             </ul>
         </div>
 
         <div class="security-box">
-            <strong>🔒 Nota sobre Segurança e Privacidade:</strong>
-            Para a sua proteção e em conformidade com as boas práticas atuais de privacidade (LGPD), não incluímos CPF ou RG no currículo. O mercado de trabalho orienta que esses dados fiquem guardados com você e sejam apresentados apenas no momento da sua contratação.
+            <strong>🔒 Nota sobre Segurança (LGPD):</strong>
+            Não incluímos CPF ou RG no currículo. O mercado orienta que esses documentos fiquem com você e sejam apresentados apenas na contratação, protegendo seus dados contra fraudes.
         </div>
 
-        <p style="font-weight: bold; margin-top: 15px; font-size: 14px;">Fale conosco agora pelo WhatsApp para começarmos!</p>
+        <p style="font-weight: bold; margin-top: 15px; font-size: 14px;">Ainda tem dúvidas? Estamos à disposição!</p>
         
-        <a href="https://wa.me/5547996442467?text=Olá!%20Li%20o%20QR%20Code%20da%20EZ%20Print%20e%20gostaria%20de%20solicitar%20um%20serviço." class="btn-whatsapp" target="_blank">
-            Chamar no WhatsApp
+        <!-- Botão Final (Dúvida Geral) -->
+        <a href="https://wa.me/5547996442467?text=Olá,%20EZ%20Print!%20Li%20o%20seu%20site%20e%20gostaria%20de%20tirar%20uma%20dúvida%20antes%20de%20pedir." class="btn-whatsapp" target="_blank">
+            Falar com Atendente
         </a>
     </div>
 
